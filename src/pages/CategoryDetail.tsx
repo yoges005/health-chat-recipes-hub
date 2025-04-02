@@ -17,22 +17,22 @@ const CategoryDetail = () => {
     "diabetes": {
       title: "Diabetes-Friendly Recipes",
       description: "These recipes are designed with diabetes management in mind, focusing on low glycemic index ingredients, balanced carbohydrates, and healthy fats to help maintain stable blood sugar levels.",
-      image: "https://images.unsplash.com/photo-1505253758473-96b7015fcd40",
+      image: "photo-1505253758473-96b7015fcd40",
     },
     "heart-disease": {
       title: "Heart-Healthy Recipes",
       description: "Our heart-healthy recipes focus on reducing sodium and unhealthy fats while incorporating omega-3 rich foods, lean proteins, and plenty of fruits and vegetables to support cardiovascular health.",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+      image: "photo-1504674900247-0877df9cc836",
     },
     "ulcer": {
       title: "Ulcer-Friendly Recipes",
       description: "These gentle recipes are designed for sensitive stomachs, avoiding irritating ingredients like spices, acidic foods, and excessive fats that might trigger or worsen ulcer symptoms.",
-      image: "https://images.unsplash.com/photo-1493770348161-369560ae357d",
+      image: "photo-1493770348161-369560ae357d",
     },
     "general": {
       title: "General Healthy Recipes",
       description: "Our collection of nutritious, well-balanced recipes for overall health and wellness, suitable for those without specific dietary restrictions.",
-      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
+      image: "photo-1512621776951-a57141f2eefd",
     },
   };
   
@@ -41,15 +41,20 @@ const CategoryDetail = () => {
   const info = categoryInfo[currentCategory] || {
     title: "Recipes",
     description: "Browse our collection of healthy recipes.",
-    image: "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9",
+    image: "photo-1499028344343-cd173ffc68a9",
   };
+  
+  // Fix for image URLs to ensure proper loading
+  const bannerImageUrl = info.image?.startsWith("http") 
+    ? info.image 
+    : `https://images.unsplash.com/${info.image}`;
   
   return (
     <div>
       {/* Hero Banner */}
       <div className="relative h-64 md:h-80">
         <img
-          src={info.image}
+          src={bannerImageUrl}
           alt={info.title}
           className="w-full h-full object-cover"
         />

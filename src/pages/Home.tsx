@@ -28,6 +28,14 @@ const Home = () => {
   
   const featuredRecipes = getFeaturedRecipes();
   
+  // Category image mapping
+  const categoryImages = {
+    "diabetes": "photo-1505253758473-96b7015fcd40",
+    "heart-disease": "photo-1504674900247-0877df9cc836",
+    "ulcer": "photo-1493770348161-369560ae357d",
+    "general": "photo-1512621776951-a57141f2eefd"
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -75,7 +83,7 @@ const Home = () => {
                 <div className="category-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
                   <div className="h-40 overflow-hidden">
                     <img 
-                      src={`https://source.unsplash.com/random/400x300/?${category === "general" ? "healthy+food" : category}`} 
+                      src={`https://images.unsplash.com/${categoryImages[category]}`}
                       alt={category} 
                       className="w-full h-full object-cover"
                     />

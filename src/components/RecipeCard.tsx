@@ -49,12 +49,17 @@ const RecipeCard = ({ id, title, image, description, prepTime, cookTime }: Recip
     }
   };
 
+  // Fix for image URLs to ensure proper loading
+  const fixedImageUrl = image?.startsWith("http") 
+    ? image 
+    : `https://images.unsplash.com/${image}`;
+
   return (
     <Card className="h-full overflow-hidden recipe-card shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
       <Link to={`/recipe/${id}`} className="h-full flex flex-col">
         <div className="relative h-48 overflow-hidden">
           <img
-            src={image}
+            src={fixedImageUrl}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300"
           />

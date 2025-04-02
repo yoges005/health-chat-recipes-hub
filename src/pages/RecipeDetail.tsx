@@ -68,6 +68,11 @@ const RecipeDetail = () => {
     }
   };
   
+  // Fix for image URLs to ensure proper loading
+  const fixedImageUrl = recipe.image?.startsWith("http") 
+    ? recipe.image 
+    : `https://images.unsplash.com/${recipe.image}`;
+
   return (
     <div className="container mx-auto px-4 py-8">
       <button
@@ -83,7 +88,7 @@ const RecipeDetail = () => {
         <div>
           <div className="relative">
             <img
-              src={recipe.image}
+              src={fixedImageUrl}
               alt={recipe.title}
               className="w-full h-auto rounded-lg shadow-md"
             />
