@@ -75,9 +75,11 @@ const CategoryDetail = () => {
   };
   
   // Fix for image URLs to ensure proper loading
-  const bannerImageUrl = info.image?.startsWith("http") 
-    ? info.image 
-    : `https://images.unsplash.com/${info.image}`;
+  const bannerImageUrl = info.image ? (
+    info.image.startsWith("http") ? info.image : 
+    info.image.startsWith("photo-") ? `https://images.unsplash.com/${info.image}` :
+    `/placeholder.svg`
+  ) : `/placeholder.svg`;
   
   return (
     <div>
@@ -87,6 +89,10 @@ const CategoryDetail = () => {
           src={bannerImageUrl}
           alt={info.title}
           className="w-full h-full object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "/placeholder.svg";
+          }}
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white px-4">

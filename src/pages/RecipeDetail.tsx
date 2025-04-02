@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -65,9 +66,12 @@ const RecipeDetail = () => {
     }
   };
   
-  const fixedImageUrl = recipe.image?.startsWith("http") 
-    ? recipe.image 
-    : `https://images.unsplash.com/${recipe.image}`;
+  // Fix for image URLs to ensure proper loading
+  const fixedImageUrl = recipe.image ? (
+    recipe.image.startsWith("http") ? recipe.image : 
+    recipe.image.startsWith("photo-") ? `https://images.unsplash.com/${recipe.image}` :
+    `/placeholder.svg`
+  ) : `/placeholder.svg`;
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -86,6 +90,10 @@ const RecipeDetail = () => {
               src={fixedImageUrl}
               alt={recipe.title}
               className="w-full h-auto rounded-lg shadow-md"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "/placeholder.svg";
+              }}
             />
             <div className="absolute top-4 right-4">
               <button

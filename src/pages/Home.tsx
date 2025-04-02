@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import RecipeCard from "@/components/RecipeCard";
@@ -98,6 +99,10 @@ const Home = () => {
                       src={`https://images.unsplash.com/${categoryImages[category.id]}`}
                       alt={category.name} 
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/placeholder.svg";
+                      }}
                     />
                   </div>
                   <div className="p-4">

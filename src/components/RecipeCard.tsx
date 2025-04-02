@@ -50,9 +50,11 @@ const RecipeCard = ({ id, title, image, description, prepTime, cookTime }: Recip
   };
 
   // Fix for image URLs to ensure proper loading
-  const fixedImageUrl = image?.startsWith("http") 
-    ? image 
-    : `https://images.unsplash.com/${image}`;
+  const fixedImageUrl = image ? (
+    image.startsWith("http") ? image : 
+    image.startsWith("photo-") ? `https://images.unsplash.com/${image}` :
+    `/placeholder.svg`
+  ) : `/placeholder.svg`;
 
   return (
     <Card className="h-full overflow-hidden recipe-card shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
@@ -62,6 +64,10 @@ const RecipeCard = ({ id, title, image, description, prepTime, cookTime }: Recip
             src={fixedImageUrl}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/placeholder.svg";
+            }}
           />
           <div className="recipe-overlay opacity-0 absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
             <span className="text-white font-medium px-4 py-2 rounded-full bg-black bg-opacity-50">
