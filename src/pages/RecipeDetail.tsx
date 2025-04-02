@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { getRecipeById } from "@/data/recipes";
+import { Recipe, getRecipeById } from "@/data/recipes";
 import { Heart, ArrowLeft, Clock } from "lucide-react";
 import { useFavorites } from "@/context/FavoritesContext";
 import { useToast } from "@/components/ui/use-toast";
@@ -17,12 +16,10 @@ const RecipeDetail = () => {
   const { isAuthenticated } = useAuth();
   const [isFav, setIsFav] = useState<boolean>(false);
   
-  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
-  // Initialize favorite state
   useEffect(() => {
     if (recipeId) {
       setIsFav(isFavorite(recipeId));
@@ -68,7 +65,6 @@ const RecipeDetail = () => {
     }
   };
   
-  // Fix for image URLs to ensure proper loading
   const fixedImageUrl = recipe.image?.startsWith("http") 
     ? recipe.image 
     : `https://images.unsplash.com/${recipe.image}`;
@@ -84,7 +80,6 @@ const RecipeDetail = () => {
       </button>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Image and basic info */}
         <div>
           <div className="relative">
             <img
@@ -107,7 +102,6 @@ const RecipeDetail = () => {
             </div>
           </div>
           
-          {/* Recipe info */}
           <div className="mt-6 bg-gray-50 rounded-lg p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center">
@@ -122,7 +116,6 @@ const RecipeDetail = () => {
               </span>
             </div>
             
-            {/* Nutrition info */}
             <h3 className="font-semibold text-lg mb-2">Nutrition (per serving)</h3>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-4">
               <div className="bg-white p-2 rounded text-center">
@@ -169,7 +162,6 @@ const RecipeDetail = () => {
           </div>
         </div>
         
-        {/* Recipe details */}
         <div>
           <h1 className="text-3xl font-bold mb-3">{recipe.title}</h1>
           <p className="text-gray-600 mb-6">{recipe.description}</p>

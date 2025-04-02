@@ -1,3 +1,4 @@
+
 export interface Recipe {
   id: string;
   title: string;
@@ -18,6 +19,11 @@ export interface Recipe {
     sodium: number;
   };
 }
+
+// Helper function to get recipe by ID
+export const getRecipeById = (id: string): Recipe | undefined => {
+  return recipes.find(recipe => recipe.id === id);
+};
 
 export const recipes: Recipe[] = [
   // Diabetes-friendly recipes
@@ -103,7 +109,7 @@ export const recipes: Recipe[] = [
     id: "diabetes-3",
     title: "Cinnamon Chia Seed Pudding",
     category: "diabetes",
-    image: "https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030",
+    image: "photo-1618160702438-9b02ab6515c9",
     description: "A low-sugar breakfast pudding rich in fiber to help control blood sugar spikes.",
     prepTime: 5,
     cookTime: 0,
