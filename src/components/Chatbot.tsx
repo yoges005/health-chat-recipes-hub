@@ -40,8 +40,14 @@ const Chatbot = () => {
     
     // Health condition detection
     const hasDiabetes = lowerQuery.includes("diabetes") || lowerQuery.includes("sugar") || lowerQuery.includes("blood sugar");
-    const hasHeartDisease = lowerQuery.includes("heart") || lowerQuery.includes("cholesterol") || lowerQuery.includes("blood pressure");
-    const hasUlcer = lowerQuery.includes("ulcer") || lowerQuery.includes("stomach") || lowerQuery.includes("gastric");
+    const hasHeartDisease = lowerQuery.includes("heart") || lowerQuery.includes("cholesterol");
+    const hasBloodPressure = lowerQuery.includes("blood pressure") || lowerQuery.includes("hypertension");
+    const hasUlcer = lowerQuery.includes("ulcer") || lowerQuery.includes("stomach pain");
+    const hasGastricIssue = lowerQuery.includes("gastric") || lowerQuery.includes("acid reflux") || lowerQuery.includes("gerd") || lowerQuery.includes("indigestion");
+    const wantsWeightLoss = lowerQuery.includes("weight loss") || lowerQuery.includes("lose weight") || lowerQuery.includes("diet") || lowerQuery.includes("slimming");
+    const wantsWeightGain = lowerQuery.includes("weight gain") || lowerQuery.includes("gain weight") || lowerQuery.includes("bulk up") || lowerQuery.includes("underweight");
+    const wantsKeto = lowerQuery.includes("keto") || lowerQuery.includes("ketogenic") || lowerQuery.includes("low carb");
+    const isPregnant = lowerQuery.includes("pregnant") || lowerQuery.includes("pregnancy") || lowerQuery.includes("expecting");
     
     // Food type detection
     const wantsBreakfast = lowerQuery.includes("breakfast") || lowerQuery.includes("morning");
@@ -56,9 +62,16 @@ const Chatbot = () => {
     
     let recipeCategory = "";
     
+    // Determine the most relevant category based on query
     if (hasDiabetes) recipeCategory = "diabetes";
     else if (hasHeartDisease) recipeCategory = "heart-disease";
+    else if (hasBloodPressure) recipeCategory = "blood-pressure";
     else if (hasUlcer) recipeCategory = "ulcer";
+    else if (hasGastricIssue) recipeCategory = "gastric-issue";
+    else if (wantsWeightLoss) recipeCategory = "weight-loss";
+    else if (wantsWeightGain) recipeCategory = "weight-gain";
+    else if (wantsKeto) recipeCategory = "keto-diet";
+    else if (isPregnant) recipeCategory = "pregnancy";
     else recipeCategory = "general";
     
     const categoryRecipes = recipes.filter(recipe => recipe.category === recipeCategory);
@@ -85,6 +98,25 @@ const Chatbot = () => {
       filteredRecipes = filteredRecipes.filter(recipe => 
         recipe.ingredients.some(ing => ing.toLowerCase().includes("fish") || ing.toLowerCase().includes("salmon"))
       );
+    }
+    
+    // Filter by meal type
+    if (wantsBreakfast) {
+      // Breakfast typically has shorter prep times and certain ingredients
+      filteredRecipes = filteredRecipes.filter(recipe => 
+        recipe.prepTime <= 15 || 
+        recipe.ingredients.some(ing => 
+          ing.toLowerCase().includes("oat") || 
+          ing.toLowerCase().includes("egg") ||
+          ing.toLowerCase().includes("toast") ||
+          ing.toLowerCase().includes("breakfast")
+        )
+      );
+    }
+    
+    if (wantsDinner) {
+      // Dinner typically has longer prep times
+      filteredRecipes = filteredRecipes.filter(recipe => recipe.prepTime + recipe.cookTime > 20);
     }
     
     if (filteredRecipes.length > 0) {

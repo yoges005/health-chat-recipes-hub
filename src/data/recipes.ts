@@ -1,8 +1,7 @@
-
 export interface Recipe {
   id: string;
   title: string;
-  category: "diabetes" | "heart-disease" | "ulcer" | "general";
+  category: "diabetes" | "heart-disease" | "ulcer" | "general" | "blood-pressure" | "weight-loss" | "keto-diet" | "pregnancy" | "gastric-issue" | "weight-gain";
   image: string;
   description: string;
   prepTime: number;
@@ -433,14 +432,368 @@ export const recipes: Recipe[] = [
     },
   },
 
-  // Add more recipes for each category to have 20+ recipes per category
-  // This is a subset for demonstration
-];
+  // Blood pressure recipes
+  {
+    id: "blood-pressure-1",
+    title: "DASH Diet Stuffed Bell Peppers",
+    category: "blood-pressure",
+    image: "photo-1615937657715-bc7b4b7962c1",
+    description: "Colorful bell peppers stuffed with a heart-healthy mixture of lean ground turkey, brown rice, and vegetables.",
+    prepTime: 20,
+    cookTime: 35,
+    servings: 4,
+    ingredients: [
+      "4 large bell peppers (any color), halved and seeded",
+      "1 lb lean ground turkey",
+      "1 cup cooked brown rice",
+      "1 onion, diced",
+      "2 cloves garlic, minced",
+      "1 zucchini, diced",
+      "1 cup mushrooms, chopped",
+      "1 can (14.5 oz) low-sodium diced tomatoes, drained",
+      "2 tbsp fresh parsley, chopped",
+      "1 tsp dried oregano",
+      "1 tsp olive oil",
+      "1/4 cup low-fat mozzarella cheese, shredded"
+    ],
+    instructions: [
+      "Preheat oven to 375°F (190°C).",
+      "Heat olive oil in a large skillet over medium heat. Add onion and garlic, sauté until fragrant.",
+      "Add ground turkey and cook until browned, breaking it up as it cooks.",
+      "Stir in zucchini and mushrooms, cook for 3-4 minutes until softened.",
+      "Add diced tomatoes, cooked rice, parsley, oregano, and a pinch of black pepper. Mix well.",
+      "Arrange pepper halves in a baking dish, fill each with the turkey and rice mixture.",
+      "Cover with foil and bake for 25 minutes. Remove foil, sprinkle with cheese and bake for 10 more minutes.",
+      "Serve hot, garnished with additional fresh parsley if desired."
+    ],
+    nutrition: {
+      calories: 310,
+      protein: 28,
+      carbs: 29,
+      fat: 10,
+      sugar: 7,
+      sodium: 195
+    }
+  },
+  {
+    id: "blood-pressure-2",
+    title: "Potassium-Rich Banana Berry Smoothie",
+    category: "blood-pressure",
+    image: "photo-1553530666-ba11a90bb212",
+    description: "A potassium-rich smoothie to help regulate blood pressure naturally.",
+    prepTime: 5,
+    cookTime: 0,
+    servings: 2,
+    ingredients: [
+      "2 ripe bananas",
+      "1 cup mixed berries (strawberries, blueberries, raspberries)",
+      "1 cup unsweetened almond milk",
+      "1/2 cup plain Greek yogurt",
+      "1 tbsp ground flaxseed",
+      "1 tbsp honey (optional)",
+      "4 ice cubes"
+    ],
+    instructions: [
+      "Place all ingredients in a blender.",
+      "Blend on high until smooth and creamy.",
+      "Pour into glasses and serve immediately."
+    ],
+    nutrition: {
+      calories: 210,
+      protein: 8,
+      carbs: 39,
+      fat: 4,
+      sugar: 22,
+      sodium: 80
+    }
+  },
+  {
+    id: "blood-pressure-3",
+    title: "Spinach and Beet Salad with Walnuts",
+    category: "blood-pressure",
+    image: "photo-1594646864565-011ba9a7d469",
+    description: "A nutrient-dense salad featuring nitrate-rich beets that help lower blood pressure.",
+    prepTime: 15,
+    cookTime: 0,
+    servings: 2,
+    ingredients: [
+      "4 cups fresh spinach leaves",
+      "2 medium beets, cooked and diced",
+      "1/4 cup walnuts, chopped",
+      "1/4 cup feta cheese, crumbled",
+      "1 small red onion, thinly sliced",
+      "2 tbsp olive oil",
+      "1 tbsp balsamic vinegar",
+      "1 tsp honey",
+      "1 tsp Dijon mustard"
+    ],
+    instructions: [
+      "In a large bowl, combine spinach, beets, walnuts, feta cheese, and red onion.",
+      "In a small bowl, whisk together olive oil, balsamic vinegar, honey, and Dijon mustard to make the dressing.",
+      "Drizzle the dressing over the salad just before serving, and toss gently to combine."
+    ],
+    nutrition: {
+      calories: 280,
+      protein: 7,
+      carbs: 18,
+      fat: 21,
+      sugar: 11,
+      sodium: 290
+    }
+  },
 
-export const getRecipesByCategory = (category: string) => {
-  return recipes.filter(recipe => recipe.category === category);
-};
+  // Weight loss recipes
+  {
+    id: "weight-loss-1",
+    title: "Cauliflower Fried Rice",
+    category: "weight-loss",
+    image: "photo-1603903322520-98afbc8e6fbb",
+    description: "A low-calorie alternative to traditional fried rice using cauliflower instead of white rice.",
+    prepTime: 15,
+    cookTime: 10,
+    servings: 4,
+    ingredients: [
+      "1 large cauliflower head, riced",
+      "2 tsp sesame oil",
+      "2 eggs, beaten",
+      "1 cup carrots, diced small",
+      "1 cup peas",
+      "3 green onions, sliced",
+      "2 cloves garlic, minced",
+      "1 tbsp fresh ginger, grated",
+      "3 tbsp low-sodium soy sauce",
+      "1 tbsp rice vinegar",
+      "1 tsp sriracha (optional)"
+    ],
+    instructions: [
+      "Heat 1 tsp sesame oil in a large skillet over medium heat. Add beaten eggs and scramble until cooked. Remove and set aside.",
+      "In the same skillet, add remaining oil. Add garlic and ginger, sauté for 30 seconds.",
+      "Add carrots and cook for 3-4 minutes until they start to soften.",
+      "Add cauliflower rice and peas. Cook for 5-6 minutes until cauliflower is tender.",
+      "Stir in soy sauce, rice vinegar, and sriracha if using.",
+      "Add back the scrambled eggs and mix well.",
+      "Garnish with sliced green onions before serving."
+    ],
+    nutrition: {
+      calories: 170,
+      protein: 10,
+      carbs: 18,
+      fat: 7,
+      sugar: 6,
+      sodium: 480
+    }
+  },
+  {
+    id: "weight-loss-2",
+    title: "Protein-Packed Lentil Bowl",
+    category: "weight-loss",
+    image: "photo-1540420773420-3366772f4999",
+    description: "A filling, high-protein, low-calorie meal that keeps you satisfied for hours.",
+    prepTime: 10,
+    cookTime: 25,
+    servings: 2,
+    ingredients: [
+      "1 cup green or brown lentils, rinsed",
+      "2 cups vegetable broth",
+      "1 cup cherry tomatoes, halved",
+      "1 cucumber, diced",
+      "1/4 cup red onion, finely diced",
+      "1/4 cup fresh parsley, chopped",
+      "2 tbsp lemon juice",
+      "1 tbsp olive oil",
+      "1 tsp cumin",
+      "Salt and pepper to taste",
+      "2 eggs, poached or boiled (optional)"
+    ],
+    instructions: [
+      "In a pot, combine lentils and vegetable broth. Bring to a boil, then reduce heat and simmer for 20-25 minutes until lentils are tender but not mushy.",
+      "Drain any excess liquid and let lentils cool slightly.",
+      "In a large bowl, combine cooked lentils, cherry tomatoes, cucumber, red onion, and parsley.",
+      "In a small bowl, whisk together lemon juice, olive oil, cumin, salt, and pepper.",
+      "Pour dressing over the lentil mixture and toss to combine.",
+      "Divide into bowls and top with a poached or boiled egg if desired."
+    ],
+    nutrition: {
+      calories: 310,
+      protein: 18,
+      carbs: 40,
+      fat: 9,
+      sugar: 4,
+      sodium: 290
+    }
+  },
+  {
+    id: "weight-loss-3",
+    title: "Zucchini Noodles with Turkey Meatballs",
+    category: "weight-loss",
+    image: "photo-1633329758674-96de8a6c25eb",
+    description: "Spiralized zucchini replaces pasta in this low-carb, high-protein dish that's perfect for weight loss.",
+    prepTime: 20,
+    cookTime: 15,
+    servings: 2,
+    ingredients: [
+      "3 medium zucchinis, spiralized",
+      "8 oz lean ground turkey",
+      "1 egg, beaten",
+      "2 tbsp whole wheat breadcrumbs",
+      "2 tbsp fresh parsley, chopped",
+      "1 tsp Italian seasoning",
+      "2 cloves garlic, minced",
+      "1 cup marinara sauce (low-sodium)",
+      "1 tbsp olive oil",
+      "2 tbsp grated Parmesan cheese (optional)"
+    ],
+    instructions: [
+      "In a bowl, combine ground turkey, beaten egg, breadcrumbs, half the garlic, parsley, Italian seasoning, salt, and pepper.",
+      "Form mixture into 12 small meatballs.",
+      "Heat olive oil in a skillet over medium heat. Cook meatballs until browned on all sides and cooked through, about 8-10 minutes.",
+      "In another pan, sauté remaining garlic for 30 seconds. Add spiralized zucchini and cook for 2-3 minutes until just tender.",
+      "Heat marinara sauce in a small saucepan.",
+      "Serve zucchini noodles topped with meatballs and marinara sauce.",
+      "Sprinkle with Parmesan cheese if desired."
+    ],
+    nutrition: {
+      calories: 290,
+      protein: 25,
+      carbs: 18,
+      fat: 15,
+      sugar: 9,
+      sodium: 350
+    }
+  },
 
-export const getRecipeById = (id: string) => {
-  return recipes.find(recipe => recipe.id === id);
-};
+  // Keto diet recipes
+  {
+    id: "keto-diet-1",
+    title: "Avocado and Bacon-Stuffed Chicken Breast",
+    category: "keto-diet",
+    image: "photo-1594041680534-84196fce778a",
+    description: "A keto-friendly dinner option packed with healthy fats and protein.",
+    prepTime: 15,
+    cookTime: 25,
+    servings: 2,
+    ingredients: [
+      "2 large chicken breasts",
+      "1 ripe avocado, sliced",
+      "4 slices bacon, cooked and crumbled",
+      "1/2 cup shredded cheddar cheese",
+      "2 tbsp olive oil",
+      "1 tsp garlic powder",
+      "1 tsp paprika",
+      "Salt and pepper to taste",
+      "Fresh chopped parsley for garnish"
+    ],
+    instructions: [
+      "Preheat oven to 375°F (190°C).",
+      "Cut a pocket in each chicken breast horizontally, being careful not to cut all the way through.",
+      "Season chicken with salt, pepper, garlic powder, and paprika.",
+      "Fill each pocket with avocado slices, crumbled bacon, and shredded cheese.",
+      "Secure with toothpicks if needed.",
+      "Heat olive oil in an oven-safe skillet over medium-high heat.",
+      "Sear chicken breasts for 3-4 minutes on each side until golden brown.",
+      "Transfer skillet to oven and bake for 15-18 minutes until chicken is cooked through.",
+      "Garnish with fresh parsley before serving."
+    ],
+    nutrition: {
+      calories: 520,
+      protein: 43,
+      carbs: 6,
+      fat: 35,
+      sugar: 1,
+      sodium: 480
+    }
+  },
+  {
+    id: "keto-diet-2",
+    title: "Creamy Cauliflower Soup with Crispy Pancetta",
+    category: "keto-diet",
+    image: "photo-1547592180-85f173990554",
+    description: "A low-carb, high-fat soup that's perfect for cold days on a keto diet.",
+    prepTime: 15,
+    cookTime: 25,
+    servings: 4,
+    ingredients: [
+      "1 large cauliflower head, cut into florets",
+      "4 oz pancetta or bacon, diced",
+      "2 tbsp butter",
+      "1 small onion, diced",
+      "2 cloves garlic, minced",
+      "3 cups chicken broth",
+      "1 cup heavy cream",
+      "1/2 cup grated Parmesan cheese",
+      "1/4 tsp nutmeg",
+      "Salt and pepper to taste",
+      "2 tbsp chives, chopped"
+    ],
+    instructions: [
+      "In a large pot, cook pancetta over medium heat until crispy. Remove and set aside, keeping 1 tbsp of fat in the pot.",
+      "Add butter to the pot. Once melted, add onion and sauté until translucent, about 3-4 minutes.",
+      "Add garlic and cook for another minute.",
+      "Add cauliflower florets and chicken broth. Bring to a boil, then reduce heat and simmer for 15-20 minutes until cauliflower is very tender.",
+      "Using an immersion blender, purée the soup until smooth.",
+      "Stir in heavy cream and Parmesan cheese. Season with nutmeg, salt, and pepper.",
+      "Heat through on low heat, being careful not to boil.",
+      "Serve topped with crispy pancetta and chopped chives."
+    ],
+    nutrition: {
+      calories: 380,
+      protein: 14,
+      carbs: 8,
+      fat: 34,
+      sugar: 3,
+      sodium: 720
+    }
+  },
+  {
+    id: "keto-diet-3",
+    title: "Keto Breakfast Frittata",
+    category: "keto-diet",
+    image: "photo-1605240889241-5b0d0998629f",
+    description: "A protein-packed breakfast frittata loaded with vegetables and cheese, perfect for a keto diet.",
+    prepTime: 10,
+    cookTime: 20,
+    servings: 4,
+    ingredients: [
+      "8 large eggs",
+      "1/4 cup heavy cream",
+      "1 cup spinach, chopped",
+      "1/2 red bell pepper, diced",
+      "4 oz mushrooms, sliced",
+      "2 green onions, sliced",
+      "4 oz cheddar cheese, shredded",
+      "2 oz feta cheese, crumbled",
+      "2 tbsp olive oil",
+      "1/2 tsp dried oregano",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      "Preheat oven to 375°F (190°C).",
+      "In a large bowl, whisk together eggs and heavy cream. Season with salt, pepper, and oregano.",
+      "Heat olive oil in a 10-inch oven-safe skillet over medium heat.",
+      "Add bell pepper and mushrooms, sauté for 4-5 minutes until softened.",
+      "Add spinach and green onions, cook until spinach is wilted.",
+      "Sprinkle half the cheese over the vegetables.",
+      "Pour the egg mixture over the vegetables and cheese. Cook for 2 minutes without stirring.",
+      "Sprinkle remaining cheese on top and transfer skillet to the oven.",
+      "Bake for 12-15 minutes until eggs are set and slightly puffed.",
+      "Let cool for 5 minutes before slicing and serving."
+    ],
+    nutrition: {
+      calories: 350,
+      protein: 21,
+      carbs: 5,
+      fat: 28,
+      sugar: 2,
+      sodium: 410
+    }
+  },
+
+  // Pregnancy recipes
+  {
+    id: "pregnancy-1",
+    title: "Iron-Rich Lentil and Spinach Stew",
+    category: "pregnancy",
+    image: "photo-1543198453-75c232a6396e",
+    description: "A nourishing stew packed with iron, folate, and protein for expecting mothers.",
+    prepTime: 15,
+    cookTime: 30,

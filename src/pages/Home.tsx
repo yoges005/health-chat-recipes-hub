@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import RecipeCard from "@/components/RecipeCard";
 import { recipes } from "@/data/recipes";
 import { useAuth } from "@/context/AuthContext";
+import { Heart, Weight, LeafyGreen, Baby, Stomach } from "lucide-react";
 
 const Home = () => {
   const { isAuthenticated } = useAuth();
   
   // Get 3 random recipes from each category for the featured section
   const getFeaturedRecipes = () => {
-    const categories = ["diabetes", "heart-disease", "ulcer", "general"];
+    const categories = ["diabetes", "heart-disease", "ulcer", "general", "blood-pressure", "weight-loss", "keto-diet", "pregnancy", "gastric-issue", "weight-gain"];
     const featuredRecipes = [];
     
     for (const category of categories) {
@@ -18,7 +19,7 @@ const Home = () => {
       // Get up to 3 random recipes from each category
       const randomRecipes = [...categoryRecipes]
         .sort(() => 0.5 - Math.random())
-        .slice(0, 3);
+        .slice(0, 1); // Just one from each to avoid too many
       
       featuredRecipes.push(...randomRecipes);
     }
@@ -33,7 +34,13 @@ const Home = () => {
     "diabetes": "photo-1505253758473-96b7015fcd40",
     "heart-disease": "photo-1504674900247-0877df9cc836",
     "ulcer": "photo-1493770348161-369560ae357d",
-    "general": "photo-1512621776951-a57141f2eefd"
+    "general": "photo-1512621776951-a57141f2eefd",
+    "blood-pressure": "photo-1563805042-7684c019e1cb",
+    "weight-loss": "photo-1490645935967-10de6ba17061",
+    "weight-gain": "photo-1583608205776-bfd35f0d9f83",
+    "keto-diet": "photo-1635321593217-6dbbca0a8809",
+    "pregnancy": "photo-1519056352125-691a1e0fb5ca",
+    "gastric-issue": "photo-1607330289024-1535c6b4e1c1"
   };
 
   return (
@@ -77,31 +84,35 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Health-Focused Categories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {["diabetes", "heart-disease", "ulcer", "general"].map((category) => (
-              <Link to={`/categories/${category}`} key={category}>
-                <div className="category-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              {id: "diabetes", name: "Diabetes", desc: "Low-glycemic recipes for managing blood sugar", icon: null},
+              {id: "heart-disease", name: "Heart Health", desc: "Heart-friendly meals low in sodium and unhealthy fats", icon: <Heart size={18} />},
+              {id: "ulcer", name: "Ulcer", desc: "Gentle recipes that won't irritate sensitive stomachs", icon: null},
+              {id: "blood-pressure", name: "Blood Pressure", desc: "Low-sodium meals rich in potassium and magnesium", icon: <Heart size={18} />},
+              {id: "weight-loss", name: "Weight Loss", desc: "Low-calorie, nutrient-dense meals for healthy weight loss", icon: <Weight size={18} />},
+              {id: "weight-gain", name: "Weight Gain", desc: "Calorie-rich, nutritious meals for healthy weight gain", icon: <Weight size={18} />},
+              {id: "keto-diet", name: "Keto Diet", desc: "High-fat, low-carb recipes for ketogenic lifestyle", icon: <LeafyGreen size={18} />},
+              {id: "pregnancy", name: "Pregnancy", desc: "Nutrient-rich meals for expecting mothers", icon: <Baby size={18} />},
+              {id: "gastric-issue", name: "Gastric Issues", desc: "Easily digestible recipes for sensitive stomachs", icon: <Stomach size={18} />},
+              {id: "general", name: "General Healthy", desc: "Nutritious meals for overall health and wellness", icon: null}
+            ].map((category) => (
+              <Link to={`/categories/${category.id}`} key={category.id}>
+                <div className="category-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 h-full hover:shadow-xl">
                   <div className="h-40 overflow-hidden">
                     <img 
-                      src={`https://images.unsplash.com/${categoryImages[category]}`}
-                      alt={category} 
+                      src={`https://images.unsplash.com/${categoryImages[category.id]}`}
+                      alt={category.name} 
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-bold text-lg capitalize">
-                      {category === "heart-disease" ? "Heart Health" : 
-                       category === "general" ? "General Healthy" : 
-                       category.charAt(0).toUpperCase() + category.slice(1)} Recipes
+                    <h3 className="font-bold text-lg capitalize flex items-center gap-2">
+                      {category.icon && category.icon}
+                      {category.name} Recipes
                     </h3>
                     <p className="text-gray-600 mt-2 text-sm">
-                      {category === "diabetes" ? 
-                        "Low-glycemic recipes for managing blood sugar" : 
-                       category === "heart-disease" ? 
-                        "Heart-friendly meals low in sodium and unhealthy fats" :
-                       category === "ulcer" ?
-                        "Gentle recipes that won't irritate sensitive stomachs" :
-                        "Nutritious meals for overall health and wellness"}
+                      {category.desc}
                     </p>
                   </div>
                 </div>

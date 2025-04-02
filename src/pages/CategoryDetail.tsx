@@ -34,6 +34,36 @@ const CategoryDetail = () => {
       description: "Our collection of nutritious, well-balanced recipes for overall health and wellness, suitable for those without specific dietary restrictions.",
       image: "photo-1512621776951-a57141f2eefd",
     },
+    "blood-pressure": {
+      title: "Blood Pressure Management Recipes",
+      description: "Recipes specially formulated to help manage blood pressure, focusing on low-sodium ingredients and foods rich in potassium, calcium, and magnesium.",
+      image: "photo-1563805042-7684c019e1cb",
+    },
+    "weight-loss": {
+      title: "Weight Loss Recipes",
+      description: "Low-calorie, nutrient-dense meals designed to support healthy weight loss while keeping you satisfied and energized throughout the day.",
+      image: "photo-1490645935967-10de6ba17061",
+    },
+    "weight-gain": {
+      title: "Weight Gain Recipes",
+      description: "Calorie-rich, nutrient-dense recipes to help with healthy weight gain and muscle building for those who need to increase their body weight.",
+      image: "photo-1583608205776-bfd35f0d9f83",
+    },
+    "keto-diet": {
+      title: "Keto Diet Recipes",
+      description: "High-fat, low-carb recipes perfect for those following a ketogenic diet to achieve or maintain ketosis.",
+      image: "photo-1635321593217-6dbbca0a8809",
+    },
+    "pregnancy": {
+      title: "Pregnancy-Friendly Recipes",
+      description: "Nutritious meals rich in essential nutrients like folate, iron, and calcium to support the health of both mother and baby during pregnancy.",
+      image: "photo-1519056352125-691a1e0fb5ca",
+    },
+    "gastric-issue": {
+      title: "Gastric-Friendly Recipes",
+      description: "Gentle, easily digestible recipes designed for those with sensitive stomachs, acid reflux, or other gastric issues.",
+      image: "photo-1607330289024-1535c6b4e1c1",
+    }
   };
   
   const currentCategory = categoryId || "";
