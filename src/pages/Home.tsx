@@ -3,22 +3,20 @@ import { Link } from "react-router-dom";
 import RecipeCard from "@/components/RecipeCard";
 import { recipes } from "@/data/recipes";
 import { useAuth } from "@/context/AuthContext";
-import { Heart, Weight, LeafyGreen, Baby, Stomach } from "lucide-react";
+import { Heart, Weight, LeafyGreen, Baby, Pill } from "lucide-react";
 
 const Home = () => {
   const { isAuthenticated } = useAuth();
   
-  // Get 3 random recipes from each category for the featured section
   const getFeaturedRecipes = () => {
     const categories = ["diabetes", "heart-disease", "ulcer", "general", "blood-pressure", "weight-loss", "keto-diet", "pregnancy", "gastric-issue", "weight-gain"];
     const featuredRecipes = [];
     
     for (const category of categories) {
       const categoryRecipes = recipes.filter(recipe => recipe.category === category);
-      // Get up to 3 random recipes from each category
       const randomRecipes = [...categoryRecipes]
         .sort(() => 0.5 - Math.random())
-        .slice(0, 1); // Just one from each to avoid too many
+        .slice(0, 1);
       
       featuredRecipes.push(...randomRecipes);
     }
@@ -28,7 +26,6 @@ const Home = () => {
   
   const featuredRecipes = getFeaturedRecipes();
   
-  // Category image mapping
   const categoryImages = {
     "diabetes": "photo-1505253758473-96b7015fcd40",
     "heart-disease": "photo-1504674900247-0877df9cc836",
@@ -44,7 +41,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="relative overflow-hidden h-[70vh]">
           <img 
@@ -79,7 +75,6 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Categories Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Health-Focused Categories</h2>
@@ -93,7 +88,7 @@ const Home = () => {
               {id: "weight-gain", name: "Weight Gain", desc: "Calorie-rich, nutritious meals for healthy weight gain", icon: <Weight size={18} />},
               {id: "keto-diet", name: "Keto Diet", desc: "High-fat, low-carb recipes for ketogenic lifestyle", icon: <LeafyGreen size={18} />},
               {id: "pregnancy", name: "Pregnancy", desc: "Nutrient-rich meals for expecting mothers", icon: <Baby size={18} />},
-              {id: "gastric-issue", name: "Gastric Issues", desc: "Easily digestible recipes for sensitive stomachs", icon: <Stomach size={18} />},
+              {id: "gastric-issue", name: "Gastric Issues", desc: "Easily digestible recipes for sensitive stomachs", icon: <Pill size={18} />},
               {id: "general", name: "General Healthy", desc: "Nutritious meals for overall health and wellness", icon: null}
             ].map((category) => (
               <Link to={`/categories/${category.id}`} key={category.id}>
@@ -121,7 +116,6 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Featured Recipes Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Featured Recipes</h2>
@@ -148,7 +142,6 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Call to Action */}
       <section className="py-16 bg-gray-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Get Personalized Recommendations</h2>

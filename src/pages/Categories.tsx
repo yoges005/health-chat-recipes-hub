@@ -1,8 +1,9 @@
+
 import { Button } from "@/components/ui/button";
 import { Link, useParams } from "react-router-dom";
 import RecipeCard from "@/components/RecipeCard";
 import { recipes } from "@/data/recipes";
-import { Heart, Weight, LeafyGreen, Baby } from "lucide-react";
+import { Heart, Weight, LeafyGreen, Baby, Pill } from "lucide-react";
 
 const Categories = () => {
   const { categoryId } = useParams();
@@ -62,7 +63,7 @@ const Categories = () => {
     "gastric-issue": {
       title: "Gastric-Friendly Recipes",
       description: "Easily digestible meals that are gentle on sensitive stomachs and digestive systems.",
-      icon: null
+      icon: <Pill size={20} className="text-foodie" />
     }
   };
   
