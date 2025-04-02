@@ -797,3 +797,349 @@ export const recipes: Recipe[] = [
     description: "A nourishing stew packed with iron, folate, and protein for expecting mothers.",
     prepTime: 15,
     cookTime: 30,
+    servings: 4,
+    ingredients: [
+      "1 cup green lentils, rinsed",
+      "1 tablespoon olive oil",
+      "1 onion, diced",
+      "2 carrots, diced",
+      "2 celery stalks, diced",
+      "3 cloves garlic, minced",
+      "1 teaspoon ground cumin",
+      "1/2 teaspoon turmeric",
+      "4 cups low-sodium vegetable broth",
+      "4 cups fresh spinach, chopped",
+      "1 can (14.5 oz) diced tomatoes",
+      "1 tablespoon lemon juice",
+      "2 tablespoons fresh parsley, chopped",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      "Heat olive oil in a large pot over medium heat.",
+      "Add onion, carrots, and celery. Cook gently for 5-7 minutes until vegetables begin to soften.",
+      "Add garlic, cumin, and turmeric. Cook for 1 minute until fragrant.",
+      "Add lentils and vegetable broth. Bring to a boil, then reduce heat and simmer for 20 minutes until lentils are tender.",
+      "Stir in diced tomatoes and spinach. Cook for another 5 minutes until spinach is wilted.",
+      "Add lemon juice, salt, and pepper to taste.",
+      "Garnish with fresh parsley before serving."
+    ],
+    nutrition: {
+      calories: 250,
+      protein: 15,
+      carbs: 40,
+      fat: 4,
+      sugar: 6,
+      sodium: 300
+    }
+  },
+  {
+    id: "pregnancy-2",
+    title: "Calcium-Boosted Berry Smoothie Bowl",
+    category: "pregnancy",
+    image: "photo-1502741224143-90386d7f8c82",
+    description: "A delicious smoothie bowl rich in calcium and antioxidants to support both mother and baby's needs.",
+    prepTime: 10,
+    cookTime: 0,
+    servings: 1,
+    ingredients: [
+      "1 cup Greek yogurt",
+      "1/2 cup frozen mixed berries",
+      "1/2 frozen banana",
+      "1 tablespoon almond butter",
+      "1 tablespoon chia seeds",
+      "1/2 cup almond milk",
+      "1 tablespoon honey (optional)",
+      "Toppings: fresh berries, granola, sliced almonds"
+    ],
+    instructions: [
+      "Place yogurt, frozen berries, banana, almond butter, chia seeds, almond milk, and honey in a blender.",
+      "Blend until smooth and creamy. Add more almond milk if needed for desired consistency.",
+      "Pour into a bowl and top with fresh berries, granola, and sliced almonds.",
+      "Serve immediately."
+    ],
+    nutrition: {
+      calories: 380,
+      protein: 22,
+      carbs: 45,
+      fat: 14,
+      sugar: 28,
+      sodium: 120
+    }
+  },
+  {
+    id: "pregnancy-3",
+    title: "Baked Salmon with Folate-Rich Vegetables",
+    category: "pregnancy",
+    image: "photo-1519708227418-c8fd9a32b7a2",
+    description: "A simple one-pan dinner rich in omega-3 fatty acids, protein, and folate for healthy fetal development.",
+    prepTime: 15,
+    cookTime: 20,
+    servings: 2,
+    ingredients: [
+      "2 salmon fillets (5 oz each)",
+      "1 bunch asparagus, trimmed",
+      "1 cup cherry tomatoes",
+      "1 cup broccoli florets",
+      "2 tablespoons olive oil",
+      "2 cloves garlic, minced",
+      "1 lemon, sliced",
+      "1 tablespoon fresh dill, chopped",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      "Preheat oven to 400°F (200°C).",
+      "On a large baking sheet, arrange asparagus, cherry tomatoes, and broccoli.",
+      "Drizzle vegetables with 1 tablespoon olive oil, add minced garlic, and season with salt and pepper. Toss to coat.",
+      "Place salmon fillets on top of the vegetables. Drizzle with remaining olive oil and season with salt and pepper.",
+      "Top salmon with lemon slices and dill.",
+      "Bake for 15-20 minutes until salmon is cooked through and vegetables are tender.",
+      "Serve immediately."
+    ],
+    nutrition: {
+      calories: 320,
+      protein: 29,
+      carbs: 12,
+      fat: 18,
+      sugar: 4,
+      sodium: 150
+    }
+  },
+
+  // Gastric issue recipes
+  {
+    id: "gastric-issue-1",
+    title: "Gentle Chicken and Rice Soup",
+    category: "gastric-issue",
+    image: "photo-1607330289024-1535c6b4e1c1",
+    description: "A soothing soup that's easy on the stomach while providing nourishment and hydration.",
+    prepTime: 15,
+    cookTime: 35,
+    servings: 4,
+    ingredients: [
+      "1 lb boneless, skinless chicken breast",
+      "8 cups low-sodium chicken broth",
+      "1 cup white rice, rinsed",
+      "2 carrots, peeled and diced",
+      "2 celery stalks, diced",
+      "1 onion, finely diced",
+      "2 tablespoons olive oil",
+      "1 teaspoon fresh thyme leaves",
+      "Salt to taste (use sparingly)"
+    ],
+    instructions: [
+      "Heat olive oil in a large pot over medium heat.",
+      "Add onion, carrots, and celery. Cook gently for 5-7 minutes until vegetables begin to soften.",
+      "Add chicken broth and bring to a simmer.",
+      "Add whole chicken breasts and cook for 15 minutes until cooked through.",
+      "Remove chicken and shred or dice it.",
+      "Add rice to the broth and simmer for 15 minutes until rice is tender.",
+      "Return shredded chicken to the pot and add thyme.",
+      "Season with a small amount of salt if needed.",
+      "Serve warm."
+    ],
+    nutrition: {
+      calories: 280,
+      protein: 25,
+      carbs: 30,
+      fat: 7,
+      sugar: 2,
+      sodium: 180
+    }
+  },
+  {
+    id: "gastric-issue-2",
+    title: "Smooth Butternut Squash Puree",
+    category: "gastric-issue",
+    image: "photo-1533622597524-a1215e26c0a2",
+    description: "A silky, non-irritating puree that provides essential nutrients in an easily digestible form.",
+    prepTime: 10,
+    cookTime: 25,
+    servings: 4,
+    ingredients: [
+      "1 medium butternut squash, peeled and cubed",
+      "1 tablespoon olive oil",
+      "1 cup low-sodium vegetable broth",
+      "1/2 teaspoon ground ginger",
+      "Salt to taste (use sparingly)",
+      "1 tablespoon maple syrup (optional)"
+    ],
+    instructions: [
+      "Heat olive oil in a pot over medium heat.",
+      "Add butternut squash cubes and cook for 5 minutes, stirring occasionally.",
+      "Add vegetable broth and ground ginger. Bring to a simmer.",
+      "Cover and cook for 15-20 minutes until squash is very tender.",
+      "Transfer to a blender and puree until completely smooth.",
+      "Return to pot, add maple syrup if using, and warm gently.",
+      "Season with a small amount of salt if needed."
+    ],
+    nutrition: {
+      calories: 120,
+      protein: 2,
+      carbs: 25,
+      fat: 4,
+      sugar: 10,
+      sodium: 85
+    }
+  },
+  {
+    id: "gastric-issue-3",
+    title: "Poached White Fish with Fennel",
+    category: "gastric-issue",
+    image: "photo-1519708227418-c8fd9a32b7a2",
+    description: "A gentle protein dish that's easy to digest and won't trigger reflux or other gastric issues.",
+    prepTime: 10,
+    cookTime: 15,
+    servings: 2,
+    ingredients: [
+      "2 cod or sole fillets (5 oz each)",
+      "1 fennel bulb, thinly sliced",
+      "1 small yellow potato, thinly sliced",
+      "1 cup low-sodium chicken broth",
+      "1/2 cup water",
+      "1 bay leaf",
+      "1 tablespoon fresh lemon juice (optional, omit if sensitive)",
+      "1 tablespoon olive oil",
+      "Fresh parsley for garnish",
+      "Salt to taste (use sparingly)"
+    ],
+    instructions: [
+      "In a large skillet with a lid, layer fennel and potato slices on the bottom.",
+      "Pour in chicken broth and water. Add bay leaf and bring to a simmer.",
+      "Gently place fish fillets on top of the vegetables.",
+      "Cover and poach for 8-10 minutes until fish is opaque and flakes easily.",
+      "Remove fish and vegetables with a slotted spoon.",
+      "If using lemon juice, add it to the cooking liquid and reduce slightly to create a simple sauce.",
+      "Drizzle fish with olive oil and sauce if using.",
+      "Garnish with fresh parsley."
+    ],
+    nutrition: {
+      calories: 210,
+      protein: 26,
+      carbs: 12,
+      fat: 7,
+      sugar: 1,
+      sodium: 160
+    }
+  },
+
+  // Weight gain recipes
+  {
+    id: "weight-gain-1",
+    title: "Protein-Calorie Smoothie",
+    category: "weight-gain",
+    image: "photo-1583608205776-bfd35f0d9f83",
+    description: "A nutrient-dense smoothie designed to add healthy calories and protein for weight gain.",
+    prepTime: 5,
+    cookTime: 0,
+    servings: 1,
+    ingredients: [
+      "1 banana",
+      "1 cup whole milk",
+      "2 tablespoons peanut butter",
+      "1 scoop protein powder",
+      "1/4 cup rolled oats",
+      "1 tablespoon honey",
+      "1 tablespoon chia seeds",
+      "1/2 teaspoon cinnamon",
+      "Ice cubes (optional)"
+    ],
+    instructions: [
+      "Place all ingredients in a blender.",
+      "Blend on high speed until smooth and creamy.",
+      "Add ice if desired and blend again.",
+      "Pour into a glass and serve immediately."
+    ],
+    nutrition: {
+      calories: 580,
+      protein: 30,
+      carbs: 65,
+      fat: 25,
+      sugar: 35,
+      sodium: 220
+    }
+  },
+  {
+    id: "weight-gain-2",
+    title: "Loaded Sweet Potato with Chicken",
+    category: "weight-gain",
+    image: "photo-1604407125539-f5f90ff4c4e4",
+    description: "A calorie-dense meal combining complex carbs, healthy fats, and lean protein for healthy weight gain.",
+    prepTime: 15,
+    cookTime: 45,
+    servings: 2,
+    ingredients: [
+      "2 large sweet potatoes",
+      "2 tablespoons olive oil",
+      "2 chicken breasts, diced",
+      "1 tablespoon taco seasoning",
+      "1 avocado, diced",
+      "1/2 cup black beans, drained and rinsed",
+      "1/2 cup corn kernels",
+      "1/4 cup Greek yogurt",
+      "1/4 cup shredded cheese",
+      "2 green onions, sliced",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      "Preheat oven to 400°F (200°C).",
+      "Prick sweet potatoes with a fork and rub with 1 tablespoon olive oil.",
+      "Bake sweet potatoes for 45 minutes until tender.",
+      "Meanwhile, in a skillet, heat remaining olive oil over medium heat.",
+      "Season diced chicken with taco seasoning, salt, and pepper.",
+      "Cook chicken for 6-8 minutes until cooked through.",
+      "Split open the baked sweet potatoes and fluff the inside with a fork.",
+      "Top each potato with chicken, black beans, corn, avocado, Greek yogurt, cheese, and green onions.",
+      "Serve immediately."
+    ],
+    nutrition: {
+      calories: 620,
+      protein: 35,
+      carbs: 65,
+      fat: 25,
+      sugar: 12,
+      sodium: 480
+    }
+  },
+  {
+    id: "weight-gain-3",
+    title: "Nutrient-Dense Granola",
+    category: "weight-gain",
+    image: "photo-1565480943982-b4830b253122",
+    description: "A homemade granola packed with nuts, seeds, and healthy fats to increase calorie intake in a nutritious way.",
+    prepTime: 10,
+    cookTime: 25,
+    servings: 10,
+    ingredients: [
+      "3 cups rolled oats",
+      "1 cup mixed nuts (almonds, walnuts, pecans), chopped",
+      "1/2 cup sunflower seeds",
+      "1/2 cup pumpkin seeds",
+      "1/4 cup flaxseeds",
+      "1/2 cup unsweetened coconut flakes",
+      "1/2 cup honey or maple syrup",
+      "1/3 cup coconut oil, melted",
+      "1 teaspoon vanilla extract",
+      "1 teaspoon cinnamon",
+      "1/2 teaspoon salt",
+      "1 cup dried fruit (raisins, cranberries, apricots), chopped"
+    ],
+    instructions: [
+      "Preheat oven to 325°F (165°C) and line a baking sheet with parchment paper.",
+      "In a large bowl, combine oats, nuts, seeds, and coconut flakes.",
+      "In a separate bowl, whisk together honey, coconut oil, vanilla, cinnamon, and salt.",
+      "Pour wet ingredients over dry ingredients and stir until well combined.",
+      "Spread mixture evenly on the prepared baking sheet.",
+      "Bake for 20-25 minutes, stirring every 10 minutes, until golden brown.",
+      "Let cool completely, then add dried fruit and mix well.",
+      "Store in an airtight container for up to two weeks."
+    ],
+    nutrition: {
+      calories: 320,
+      protein: 8,
+      carbs: 35,
+      fat: 18,
+      sugar: 15,
+      sodium: 120
+    }
+  }
+];
